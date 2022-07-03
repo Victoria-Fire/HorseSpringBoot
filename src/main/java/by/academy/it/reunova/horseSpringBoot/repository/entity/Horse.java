@@ -1,10 +1,9 @@
-package by.academy.it.reunova.horseSpringBoot.models;
+package by.academy.it.reunova.horseSpringBoot.repository.entity;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
-
 
 @Builder
 @Getter
@@ -21,14 +20,17 @@ public class Horse {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "name")
+    private String nameHorse;
+
     @Column(name = "type")
-    private String type;
+    private String typeHorse;
 
     @Column(name = "age")
-    private Integer age;
+    private Integer ageHorse;
 
     @Column(name = "price")
-    private Integer price;
+    private Integer priceHorse;
 
     @Override
     public boolean equals(Object o) {

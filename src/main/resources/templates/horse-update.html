@@ -9,17 +9,20 @@
 
 <div class="container mt-5 mb-5">
     <h1>Редактировать лошадь</h1>
-    <div th:each="el : ${horse}">
+    <div th:each="horse : ${horse}">
         <form method="post">
-            <input type="text" th:value="${el.type}" name="type" id="type" placeholder="Введите тип лошади"
-                   class="form-control"></br>
             <div class="span1"></div>
-            <input type="text" th:value="${el.age}" name="age" id="age" placeholder="Введите возраст лошади"
+            <input type="text" th:value="${horse.nameHorse}" name="name" id="nameHorse" placeholder="Введите имя лошади"
                    class="form-control"></br>
             <div class="span2"></div>
-            <input type="text" th:value="${el.price}" name="price" id="price" placeholder="Введите цену лошади"
+            <input type="text" th:value="${horse.typeHorse}" name="type" id="type" placeholder="Введите тип лошади"
                    class="form-control"></br>
             <div class="span3"></div>
+            <input type="text" th:value="${horse.ageHorse}" name="age" id="age" placeholder="Введите возраст лошади"
+                   class="form-control"></br>
+            <div class="span4"></div>
+            <input type="text" th:value="${horse.priceHorse}" name="price" id="price" placeholder="Введите цену лошади"
+                   class="form-control"></br>
             </br>
             <button type="submit" class="btn btn-success">Обновить</button>
             <a th:href="'/horse'" class="btn btn-warning">Назад</a>

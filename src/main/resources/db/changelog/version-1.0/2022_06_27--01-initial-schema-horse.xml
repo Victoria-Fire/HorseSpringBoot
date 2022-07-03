@@ -4,12 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-    <changeSet id="1" author="Viktoria Reunova">
+    <changeSet id="1" author="Viktoria Reunova" context="init">
         <sql>
             create table horse
             (
                 id    int auto_increment
                     primary key,
+                name  varchar(255) null,
                 type  varchar(255) null,
                 age   int,
                 price int

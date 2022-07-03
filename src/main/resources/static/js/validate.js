@@ -1,26 +1,33 @@
-let reg1 = /^[A-Za-zА-Яа-яЁё]{1,12}$/;
+let reg1 = /(^[A-Za-zА-Яа-яЁё]{1,12})(\s{1}[A-Za-zА-Яа-яЁё]{1,12})?(\s{1}[A-Za-zА-Яа-яЁё]{1,12})?$/;
 let reg2 = /^[1-9]{1}$|^[1-2]{1}[0-9]{1}$|^30$/;
 let reg3 = /^[1-9]\d{0,3}$/;
 
-let inp1 = document.querySelector('#type');
-let inp2 = document.querySelector('#age');
-let inp3 = document.querySelector('#price');
+let inp1 = document.querySelector('#nameHorse');
+let inp2 = document.querySelector('#type');
+let inp3 = document.querySelector('#age');
+let inp4 = document.querySelector('#price');
+
 let span1 = document.querySelector('.span1');
 let span2 = document.querySelector('.span2');
 let span3 = document.querySelector('.span3');
+let span4 = document.querySelector('.span4');
 
 document.querySelector('.btn').onclick = function (e) {
     if (!validate(reg1, inp1.value)) {
         e.preventDefault();
-        notValid(inp1, span1, 'Введите тип из 1-12 букв');
+        notValid(inp1, span1, 'Введите имя из 1-3 слов');
     }
-    if (!validate(reg2, inp2.value)) {
+    if (!validate(reg1, inp2.value)) {
         e.preventDefault();
-        notValid(inp2, span2, 'Введите возраст 1-30 лет');
+        notValid(inp2, span2, 'Введите тип из 1-3 слов');
     }
-    if (!validate(reg3, inp3.value)) {
+    if (!validate(reg2, inp3.value)) {
         e.preventDefault();
-        notValid(inp3, span3, 'Введите цену 1-9999$');
+        notValid(inp3, span3, 'Введите возраст 1-30 лет');
+    }
+    if (!validate(reg3, inp4.value)) {
+        e.preventDefault();
+        notValid(inp4, span4, 'Введите цену 1-9999$');
     }
 };
 
