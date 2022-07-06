@@ -6,4 +6,5 @@
 
     <include file="2022_06_27--01-initial-schema-horse.xml" relativeToChangelogFile="true"/>
     <include file="2022_06_27--02-test-data.xml" relativeToChangelogFile="true"/>
+    <include file="2022_07_05--03-spring-security.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

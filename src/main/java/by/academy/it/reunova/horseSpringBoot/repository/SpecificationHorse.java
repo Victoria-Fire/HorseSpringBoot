@@ -1,7 +1,7 @@
 package by.academy.it.reunova.horseSpringBoot.repository;
 
-import by.academy.it.reunova.horseSpringBoot.entity.Horse_;
 import by.academy.it.reunova.horseSpringBoot.repository.entity.Horse;
+import by.academy.it.reunova.horseSpringBoot.repository.entity.Horse_;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.Predicate;
