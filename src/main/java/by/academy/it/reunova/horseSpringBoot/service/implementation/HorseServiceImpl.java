@@ -40,6 +40,11 @@ public class HorseServiceImpl implements HorseService {
     }
 
     @Override
+    public void saveHorse(HorseDto horseDto) {
+        horseRepository.save(horseMapper.toHorse(horseDto));
+    }
+
+    @Override
     public List<HorseDto> findAllHorses() {
         return StreamSupport
                 .stream(horseRepository.findAll().spliterator(), false)

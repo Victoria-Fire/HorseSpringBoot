@@ -11,6 +11,8 @@ public interface HorseService {
 
     void createHorse(String name, String type, Integer age, Integer price);
 
+    void saveHorse(HorseDto horseDto);
+
     List<HorseDto> findAllHorses();
 
     void updateHorse(Integer id, String name, String type, Integer age, Integer price);

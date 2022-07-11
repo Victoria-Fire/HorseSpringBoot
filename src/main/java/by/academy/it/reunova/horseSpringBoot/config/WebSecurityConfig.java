@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/horse/add").hasAnyAuthority( "ADMIN")
                 .antMatchers("/horse/{id}/update").hasAnyAuthority( "ADMIN")
                 .antMatchers("/horse/{id}/delete").hasAnyAuthority( "ADMIN")
-                .antMatchers("/index").permitAll()
+                .antMatchers("/index", "/horse-rest").permitAll()
                 .and()
                 .formLogin().permitAll()
                 // Перенаправление на главную страницу после успешного входа
