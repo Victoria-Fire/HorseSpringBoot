@@ -1,5 +1,6 @@
 package by.academy.it.reunova.horseSpringBoot.rest;
 
+import by.academy.it.reunova.horseSpringBoot.feign.SimpleClient;
 import by.academy.it.reunova.horseSpringBoot.service.dto.HorseDto;
 import by.academy.it.reunova.horseSpringBoot.service.interfaces.HorseService;
 import lombok.RequiredArgsConstructor;
@@ -14,16 +15,18 @@ import java.util.List;
 public class HorseRestController {
 
     private final HorseService horseService;
+    private final SimpleClient simpleClient;
 
     @GetMapping
-    @RequestMapping(produces = {MediaType.APPLICATION_XML_VALUE})
+//    @RequestMapping(produces = {MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<HorseDto> getHorses() {
-        return horseService.findAllHorses();
+        return simpleClient.getHorses();
+//        return horseService.findAllHorses();
     }
 
     @PostMapping
     public void createHorse(@RequestBody HorseDto horse) {
         horseService.saveHorse(horse);
     }
-
 }
